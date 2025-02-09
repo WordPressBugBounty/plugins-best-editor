@@ -196,14 +196,20 @@ final class Best_Editor extends \DediData\Singleton {
 		wp_enqueue_script( $this->plugin_slug );
 		*/
 
-		$font_awesome = get_option( $this->plugin_slug )['font-awesome'];
+		$font_awesome = get_option( $this->plugin_slug );
+		if ( is_array( $font_awesome ) ) {
+			$font_awesome = $font_awesome['font-awesome'];
+		}
 		if ( true === $font_awesome /* or !isset( $font_awesome ) */ ) {
 			wp_enqueue_style( 'font-awesome', $this->plugin_url . '/assets/fontawesome-6.5.1/css/all.min.css', null, '6.5.1' );
 			// wp_enqueue_script( $this->plugin_slug , $this->plugin_url . '/js/script.js', array(), $this->plugin_version, true );
 		}
-		$bootstrap = get_option( $this->plugin_slug )['bootstrap'];
-		$rtl       = is_rtl() ? '-rtl' : '';
-		$rtl_ext   = is_rtl() ? '.rtl' : '';
+		$bootstrap = get_option( $this->plugin_slug );
+		if ( is_array( $bootstrap ) ) {
+			$bootstrap = get_option( $this->plugin_slug )['bootstrap'];
+		}
+		$rtl     = is_rtl() ? '-rtl' : '';
+		$rtl_ext = is_rtl() ? '.rtl' : '';
 		if ( false === $bootstrap /* || ! isset( $bootstrap ) */ ) {
 			return;
 		}
