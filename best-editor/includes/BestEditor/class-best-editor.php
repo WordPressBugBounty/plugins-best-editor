@@ -1,11 +1,9 @@
 <?php
 /**
  * Advanced Classic Editor Main Class
- * 
+ *
  * @package Best_Editor
  */
-
-declare(strict_types=1);
 
 namespace BestEditor;
 
@@ -13,52 +11,52 @@ namespace BestEditor;
  * Class Best_Editor
  */
 final class Best_Editor extends \DediData\Singleton {
-	
+
 	/**
 	 * Plugin URL
-	 * 
+	 *
 	 * @var string $plugin_url
 	 */
 	protected $plugin_url;
 
 	/**
 	 * Plugin Folder
-	 * 
+	 *
 	 * @var string $plugin_folder
 	 */
 	protected $plugin_folder;
 
 	/**
 	 * Plugin Name
-	 * 
+	 *
 	 * @var string $plugin_name
 	 */
 	protected $plugin_name;
 
 	/**
 	 * Plugin Version
-	 * 
+	 *
 	 * @var string $plugin_version
 	 */
 	protected $plugin_version;
-	
+
 	/**
 	 * Plugin Slug
-	 * 
+	 *
 	 * @var string $plugin_slug
 	 */
 	protected $plugin_slug;
 
 	/**
 	 * Plugin File
-	 * 
+	 *
 	 * @var string $plugin_file
 	 */
 	protected $plugin_file;
 
 	/**
 	 * Row1 Buttons
-	 * 
+	 *
 	 * @var array<string> $row1_buttons
 	 */
 	protected $row1_buttons = array(
@@ -73,7 +71,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Row2 Buttons
-	 * 
+	 *
 	 * @var array<string> $row2_buttons
 	 */
 	protected $row2_buttons = array(
@@ -97,7 +95,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Row3 Buttons
-	 * 
+	 *
 	 * @var array<string> $row3_buttons
 	 */
 	protected $row3_buttons = array(
@@ -122,21 +120,21 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Row4 Buttons
-	 * 
+	 *
 	 * @var array<string> $row4_buttons
 	 */
 	protected $row4_buttons = array();
 
 	/**
 	 * All Buttons
-	 * 
+	 *
 	 * @var array<string> $all_buttons
 	 */
 	protected $all_buttons = array();
 
 	/**
 	 * Exception Buttons
-	 * 
+	 *
 	 * @var array<string> $exception_buttons
 	 */
 	protected $exception_buttons = array(
@@ -154,7 +152,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param mixed $plugin_file Plugin File Name.
 	 * @see https://developer.wordpress.org/reference/functions/register_activation_hook
 	 * @see https://developer.wordpress.org/reference/functions/register_deactivation_hook
@@ -179,7 +177,7 @@ final class Best_Editor extends \DediData\Singleton {
 	/**
 	 * The function is used to load frontend scripts and styles in a WordPress plugin, with support for
 	 * RTL (right-to-left) languages.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function load_frontend_scripts() {
@@ -219,7 +217,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Styles for Admin
-	 * 
+	 *
 	 * @return void
 	 */
 	public function load_admin_scripts() {
@@ -252,7 +250,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Activate the plugin
-	 * 
+	 *
 	 * @return void
 	 * @see https://developer.wordpress.org/reference/functions/add_option
 	 */
@@ -262,7 +260,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Run when plugins deactivated
-	 * 
+	 *
 	 * @return void
 	 */
 	public function deactivate() {
@@ -273,7 +271,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Add Buttons
-	 * 
+	 *
 	 * @return void
 	 * @SuppressWarnings(PHPMD.Superglobals)
 	 */
@@ -308,7 +306,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * TinyMCE Init
-	 * 
+	 *
 	 * @param array<mixed> $init Init array.
 	 * @return mixed
 	 */
@@ -368,7 +366,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Modifies the buttons displayed in the WordPress editor toolbar.
-	 * 
+	 *
 	 * @param array<string> $original An array of buttons that are currently displayed in the first row of the TinyMCE editor toolbar.
 	 * @return array<string> Returns an array of buttons for the first row of the TinyMCE editor toolbar.
 	 */
@@ -384,7 +382,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Modifies the second row of buttons in a WordPress editor toolbar.
-	 * 
+	 *
 	 * @param array<string> $original An array of buttons that are currently displayed in the second row of the TinyMCE editor toolbar.
 	 * @return array<string> An array of buttons.
 	 */
@@ -400,7 +398,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Modifies the third row of buttons in a WordPress editor toolbar.
-	 * 
+	 *
 	 * @param array<string> $original An array of buttons that are currently displayed in the third row of the TinyMCE editor toolbar.
 	 * @return array<string> An array of buttons.
 	 */
@@ -413,10 +411,10 @@ final class Best_Editor extends \DediData\Singleton {
 
 		return $buttons_3;
 	}
-	
+
 	/**
 	 * Add Plugins To TinyMCE
-	 * 
+	 *
 	 * @param array<mixed> $plugin_array Plugin Array.
 	 * @return mixed
 	 */
@@ -453,7 +451,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Uninstall plugin
-	 * 
+	 *
 	 * @return void
 	 * @see https://developer.wordpress.org/reference/functions/delete_option
 	 */
@@ -468,7 +466,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * Set Plugin Info
-	 * 
+	 *
 	 * @return void
 	 */
 	private function set_plugin_info() {
@@ -488,7 +486,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * The function "run" is a placeholder function in PHP with no code inside.
-	 * 
+	 *
 	 * @return void
 	 */
 	private function run() {
@@ -497,7 +495,7 @@ final class Best_Editor extends \DediData\Singleton {
 
 	/**
 	 * The admin function includes the options.php file and registers the admin menu.
-	 * 
+	 *
 	 * @return void
 	 * @SuppressWarnings(PHPMD.StaticAccess)
 	 */
